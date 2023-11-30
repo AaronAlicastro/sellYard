@@ -6,17 +6,11 @@
 }
 
 .form-container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 300px;
-    grid-template-rows: auto 1fr auto;
     justify-items: center;
-}
-
-.logo {
-    display: none;
-    width: 150px;
-    margin-bottom: 48px;
-    justify-self: center;
+    align-items: center;
 }
 
 .title {
@@ -77,10 +71,4 @@
 .login-button {
     margin-top: 14px;
     margin-bottom: 30px;
-}
-
-@media (max-width: 640px) {
-    .logo {
-        display: block;
-    }
 }

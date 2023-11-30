@@ -1,8 +1,10 @@
-.product-detail {
-    width: 360px;
-    padding: 24px;
-    position: absolute;
-    right: 0;
+.product-detail-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
@@ -101,10 +103,4 @@
     cursor: pointer;
     font-size: var(--md);
     font-weight: bold;
-}
-
-@media(max-width: 640px) {
-    .product-detail {
-        width: 100%;
-    }
 }

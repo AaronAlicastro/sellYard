@@ -1,9 +1,14 @@
 .desktop-menu {
+    position: absolute;
+    right: calc(var(--lg) + 30px);
+    top: calc(var(--lg) + 30px);
     width: 100px;
     height: fit-content;
     border: 1px solid var(--very-light-pink);
     border-radius: 6px;
     padding: 20px 20px 0 20px;
+    background: var(--menu-back);
+    z-index: 100000000000;
 }
 
 .desktop-menu ul {

@@ -1,8 +1,17 @@
+.product-detail-container {
+    width: 100vw;
+    height: fit-content;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .product-detail {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     padding-bottom: 24px;
-    position: absolute;
-    right: 0;
+    position: relative;
 }
 
 .product-detail>img {
@@ -30,6 +39,8 @@
 
 .product-info {
     margin: 24px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-info p:nth-child(1) {

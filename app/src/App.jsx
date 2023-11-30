@@ -1,34 +1,57 @@
 import React, { Component } from 'react';
-import Home from './pages/Home';
-import DetalleProducto from './pages/components/DetalleProducto';
+import Querys from './pages/logic/querys';
 import Login from './pages/Login';
-import EditarCuenta from './pages/EditarCuenta';
-import Email from './pages/components/Email';
-import MenuPc from './pages/components/MenuPc';
-import MenuPhone from './pages/components/MenuPhone';
-import NewPassword from './pages/components/NewPassword';
-import MisOrdenes from './pages/MisOrdenes';
+import SignIn from './pages/SignIn';
+import Home from "./pages/Home";
+import EmailPropm from "./pages/EmailPromp";
+import DetalleProducto from './pages/DetalleProducto';
+import ShoppingCart from "./pages/ShoppingCart";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.querys = new Querys();
+
     this.ventanas = {
-      index: () => <MisOrdenes />
+      login: () => <Login
+        goToView={(view, dataView) => this.goToView(view, dataView)}
+      />,
+      signIn: () => <SignIn
+        goToView={(view, dataView) => this.goToView(view, dataView)}
+      />,
+      home: () => <Home
+        goToView={(view, dataView) => this.goToView(view, dataView)}
+        querys={this.querys}
+      />,
+      detalleProducto: (data) => <DetalleProducto
+        goToView={(view, dataView) => this.goToView(view, dataView)}
+        querys={this.querys}
+        product={data.product}
+      />,
+      shoppingCart: () => <ShoppingCart
+        goToView={(view, dataView) => this.goToView(view, dataView)}
+        products={this.querys.cartProductsAdded}
+      />,
+      emailPropm: () => <EmailPropm
+        goToView={(view, dataView) => this.goToView(view, dataView)}
+      />
     }
-    
+
     this.state = {
-      view: "index"
+      view: "login",
+      dataView: {}
     }
   }
 
-  goToView(view) {
-    this.state = {
-      view
-    }
+  goToView(view, dataView) {
+    this.setState({
+      view,
+      dataView
+    });
   }
 
   render() {
-    return this.ventanas[this.state.view]();
+    return this.ventanas[this.state.view](this.state.dataView);
   }
 }
 

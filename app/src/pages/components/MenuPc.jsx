@@ -1,14 +1,18 @@
 import React from "react";
 import "./styles/menuPc.css";
 
-function MenuPc() {
-    return <div className="desktop-menu">
+function MenuPc({ display }) {
+    return <div
+        className="desktop-menu"
+        style={{ display }}
+        onClick={e => e.stopPropagation()}
+    >
         <ul>
             <li>
-                <a href="/" className="title">My orders</a>
+                <a className="title">My orders</a>
             </li>
             <li>
-                <a href="/">My account</a>
+                <a>My account</a>
             </li>
             <li>
                 <a href="/">Sign out</a>

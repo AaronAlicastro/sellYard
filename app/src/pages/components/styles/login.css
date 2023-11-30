@@ -11,13 +11,6 @@
     grid-template-rows: auto 1fr auto;
 }
 
-.logo {
-    display: none;
-    width: 150px;
-    margin-bottom: 48px;
-    justify-self: center;
-}
-
 .form {
     display: flex;
     flex-direction: column;
@@ -81,18 +74,6 @@
 }
 
 @media (max-width: 640px) {
-    .logo {
-        display: block;
-    }
-
-    .form-container {
-        height: 100vh;
-    }
-
-    .form-container img {
-        margin-top: 25vh;
-    }
-
     .secondary-button {
         justify-content: end;
         margin-bottom: 15px;

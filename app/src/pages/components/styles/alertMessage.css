@@ -1,0 +1,13 @@
+.alertMessage {
+    position: fixed;
+    top: 5px;
+    width: 100vw;
+    text-align: center;
+    padding: var(--lg);
+    box-sizing: border-box;
+    background: var(--hospital-green);
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    z-index: 9999999999999999999;
+}

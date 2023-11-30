@@ -5,6 +5,11 @@
     padding: 24px;
     height: 100vh;
     box-sizing: border-box;
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    background: var(--menu-back);
+    z-index: 100000000000;
 }
 
 .mobile-menu ul {

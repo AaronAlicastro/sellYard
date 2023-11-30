@@ -3,14 +3,16 @@ nav {
     padding: 0 24px;
     justify-content: space-between;
     border-bottom: 1px solid var(--very-light-pink);
+    position: relative;
 }
 
 .menu {
     display: none;
 }
 
-.logo {
+.navBar-left-logo {
     width: 100px;
+    display: none;
 }
 
 .navBar-left {
@@ -19,6 +21,13 @@ nav {
 
 .navBar-left ul {
     margin-left: 12px;
+}
+
+.categorySelected {
+    background: var(--hospital-green);
+    color: var(--black) !important;
+    font-weight: bold;
+    border: none;
 }
 
 .navBar-left ul li a,
@@ -52,6 +61,11 @@ nav {
     margin-right: 12px;
 }
 
+.navBar-right-account {
+    margin-right: var(--lg);
+    text-decoration: underline solid var(--hospital-green);
+}
+
 .navBar-shoppin-cart {
     position: relative;
 }
@@ -73,15 +87,13 @@ nav {
 }
 
 @media (max-width: 640px) {
+    .navBar-left-logo,
     .menu {
-        display: block;
+        display: inline-block;
     }
 
-    .navBar-left ul {
-        display: none;
-    }
-
-    .navBar-email {
+    .navBar-left ul,
+    .navBar-right-account {
         display: none;
     }
 }

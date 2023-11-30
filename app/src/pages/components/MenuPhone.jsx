@@ -1,48 +1,40 @@
 import React from "react";
 import "./styles/menuPhone.css";
 
-function MenuPhone() {
-    return <div className="mobile-menu">
+function MenuPhone(props) {
+    return <div
+        className="mobile-menu"
+        style={{ display: props.display }}
+        onClick={e => e.stopPropagation()}
+    >
         <div>
             <ul>
                 <li>
-                    <a href="/">CATEGORIES</a>
+                    <a>CATEGORIES</a>
                 </li>
                 <li>
-                    <a href="/">ALL</a>
+                    <a onClick={e => props.setCategory(e, "all")}>ALL</a>
                 </li>
-                <li>
-                    <a href="/">Clothes</a>
-                </li>
-                <li>
-                    <a href="/">Electronics</a>
-                </li>
-                <li>
-                    <a href="/">Fornitures</a>
-                </li>
-                <li>
-                    <a href="/">Toys</a>
-                </li>
-                <li>
-                    <a href="/">Other</a>
-                </li>
+                {
+                    props.categories.map((cts, i) => {
+                        return <li key={i + "categories"} onClick={e => props.setCategory(e, cts)}>
+                            <a>{cts}</a>
+                        </li>
+                    })
+                }
             </ul>
+
             <ul>
                 <li>
-                    <a href="/">My orders</a>
+                    <a>My orders</a>
                 </li>
                 <li>
-                    <a href="/">My account</a>
-                </li>
-                <li>
-                    <a href="/">ALL</a>
+                    <a>My account</a>
                 </li>
             </ul>
         </div>
+
         <ul>
-            <li>
-                <a href="/" className="email">Example@gmail.com</a>
-            </li>
             <li>
                 <a href="/" className="signOut">Sign out</a>
             </li>
